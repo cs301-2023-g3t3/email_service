@@ -36,7 +36,7 @@ def send_email(maker_email, checker_email, to):
     html_template = html_template.replace("INSERT_DATA_HERE", data)
     try:
         response = ses.send_email(
-            Source=sender_email,
+            Source=f"G3T3 Admin System <{sender_email}>",
             Destination={
                 'ToAddresses': [maker_email if to == "maker" else checker_email]
             },
