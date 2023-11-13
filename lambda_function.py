@@ -25,7 +25,7 @@ def lambda_handler(event, context):
             print(f"Error decoding JSON: {e}")
 
 def send_email(maker_email, checker_email, to):
-    with open("template.html", "r") as f:
+    with open("./template.html", "r") as f:
             html_template = f.read()
     subject = "Makerchecker Request made!" if to == "maker" else "New Makerchecker request!"
     
